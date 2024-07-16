@@ -9,6 +9,23 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          const square = entry.target.querySelector('.page');
+
+          if (entry.isIntersecting) {
+            square.classList.add('page-transition');
+            return; // if we added the class, exit the function
+          }
+
+          // We're not intersecting, so remove the class!
+          square.classList.remove('page-transition');
+        });
+      });
+
+    observer.observe(document.querySelector('.profil-desa-section'));
+    observer.observe(document.querySelector('.logo-desa-section'));
+
     var navLinks = document.querySelectorAll('header nav ul li a');
     navLinks.forEach(function (link) {
         link.addEventListener('click', function () {
