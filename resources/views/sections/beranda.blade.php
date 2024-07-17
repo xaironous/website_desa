@@ -39,6 +39,7 @@
     </div>
 </section>
 
+<<<<<<< Updated upstream
 <section id="profil-desa" class="profil-desa-section">
     <div class="profil-container">
         <h2>Profil Singkat Desa</h2>
@@ -59,6 +60,41 @@
         </div>
     </div>
 </section>
+=======
+        <section id="profil-desa" class="profil-desa-section">
+            <div>
+                <h2>Profil Singkat Desa</h2>
+                <div class="profil-container">
+                    <div class="profil-elements">
+                        <div class="profil-box">
+                            <h3 class="small-title">Sejarah</h3>
+                            <div class="profil-element">
+                                <p>Desa kami berdiri sejak zaman kolonial dan memiliki sejarah panjang yang kaya. Awalnya
+                                    desa ini didirikan oleh para petani yang berjuang untuk memanfaatkan lahan subur di
+                                    daerah ini. Seiring waktu, desa berkembang menjadi komunitas yang solid dan mandiri.</p>
+                            </div>
+                        </div>
+                        <div class="profil-box">
+                            <h3 class="small-title">Letak Geografis</h3>
+                            <div class="profil-element">
+                                <p>Desa kami terletak di kaki gunung dengan koordinat geografis 7.1234° S, 110.1234° E.
+                                    Dikelilingi oleh sawah hijau dan hutan pinus, desa ini menawarkan pemandangan alam yang
+                                    menakjubkan dan udara yang sejuk.</p>
+                            </div>
+                        </div>
+                        <div class="profil-box">
+                            <h3 class="small-title">Luas Wilayah</h3>
+                            <div class="profil-element">
+                                <p>Dengan luas wilayah mencapai 1500 hektar, desa kami memiliki berbagai macam lahan, mulai
+                                    dari area pertanian, hutan lindung, hingga kawasan permukiman. Hal ini memungkinkan kami
+                                    untuk menjaga keseimbangan antara pembangunan dan kelestarian lingkungan.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+>>>>>>> Stashed changes
 
 <section id="berita" class="news-section">
     <div class="swiper-container news-grid">
