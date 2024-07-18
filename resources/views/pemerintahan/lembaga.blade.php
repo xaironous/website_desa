@@ -4,9 +4,6 @@
 <section id="profil-section">
     <div class="container">
         <h2>LEMBAGA DESA SUKOLILO</h2>
-<<<<<<< Updated upstream
-        
-=======
         <table class="bw-table">
             <tr>
                 <th class="medium-label">Nama Lembaga</th>
@@ -96,7 +93,6 @@
                 <td class="small-label">Jalan Sukolilo</td>
             </tr>
         </table>
->>>>>>> Stashed changes
     </div>
 </section>
 @endsection
