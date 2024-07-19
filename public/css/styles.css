@@ -169,7 +169,7 @@ main {
 }
 
 .profil-container {
-    margin-top: 100px;
+    margin-top: 35px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -347,7 +347,7 @@ header nav ul li a:hover {
 
 header ul.sub-menu{
     position: absolute;
-    background-color: #3b4200;
+    background-color: #059212;
     display: block;
     list-style-type: none;
     width: 200px;
@@ -568,7 +568,6 @@ body {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 30px;
 }
 
 .footer-content {
@@ -581,26 +580,20 @@ body {
     max-width: 45%;
 }
 
+#contact {
+    padding-left: 100px;
+    max-width: 40%;
+}
+
 .footer-column h3 {
-    font-size: 1.5em;
+    font-size: 1.2em;
     margin-bottom: 15px;
 }
 
 .footer-column p {
-    font-size: 1em;
+    font-size: 0.8em;
     line-height: 1.6;
-}
-
-.footer-column .read-more {
-    color: #e5bc00;
-    text-decoration: none;
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-.footer-column .read-more:hover {
-    text-decoration: underline;
+    margin: 2px 0;
 }
 
 .footer-column .social-icons {
@@ -685,6 +678,7 @@ body {
     font-size: 28px;
     margin-bottom: 20px;
     color: #555;
+    text-align: center;
 }
 
 #profil-section h4 {
@@ -752,12 +746,10 @@ body {
 /* STRUKTUR DESA */
 
 .struktur-container {
-    width: 70%;
+    padding-left: 150px;
     margin-right: auto;
     margin-left: auto;
-    justify-items: center;
     flex-direction: column;
-    height: max-content;
 }
 
 .struktur-box {
@@ -770,21 +762,20 @@ body {
 
 .struktur-card {
     position: relative;
+    width: 33%;
+    margin-top: 25px;
+    margin-bottom: 25px;
     display: flex;
-    margin-left: auto;
-    margin-right: auto;
     flex-direction: row;
-    align-items: center;
-    width: max-content;
-    height: max-content;
+    align-items: right;
 }
 
 .struktur-card-img-box {
     position: sticky;
     border-radius: 100%;
     border: 1px solid black;
-    width: 72px;
-    height: 72px;
+    width: 100px;
+    height: 100px;
 }
 
 .struktur-card-img {
@@ -846,10 +837,37 @@ table.bw-table {
     color: rgb(54, 54, 239);
 }
 
+.charts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.chart {
+    width: 45%;
+    height: 40vh;
+    padding-top: 50px;
+}
+
+.chart3 {
+    width: 42%;
+    margin: 20px 0;
+    padding-top: 75px;
+    margin: 0 auto;
+}
+
+.map{
+    flex: 1;
+}
+
+.map-text{
+    flex: 2;
+}
+
 /* MEDIA CONTENT*/
-
 @media (max-width: 768px) {
-
     .struktur-box {
         position: relative;
         display: flex;
@@ -908,6 +926,11 @@ table.bw-table {
     .footer-column {
         max-width: 100%;
         text-align: center;
+    }
+
+    #contact {
+        padding-left: 0px;
+        max-width: 100%;
     }
 
     .profil-elements {

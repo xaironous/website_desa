@@ -63,11 +63,6 @@
                         <td>5.290 Ekor</td>
                         <td>324 Orang</td>
                     </tr>
-                    <tr>
-                        <td>Jangkrik</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
                 </table>
             </div>
         </div>

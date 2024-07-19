@@ -14,28 +14,16 @@ class PageController extends Controller
         return view('profil.visi');
     }
 
-    public function asal(){
-        return view('profil.asal');
-    }
-
-    public function legenda(){
-        return view('profil.legenda');
-    }
-
     public function sejarah(){
         return view('profil.sejarah');
     }
 
-    public function penduduk(){
-        return view('profil.penduduk');
+    public function demografis(){
+        return view('profil.demografis');
     }
 
-    public function topografi(){
-        return view('profil.topografi');
-    }
-
-    public function lokasi(){
-        return view('profil.lokasi');
+    public function geografis(){
+        return view('profil.geografis');
     }
 
     public function struktur(){
@@ -68,5 +56,9 @@ class PageController extends Controller
 
     public function galeri(){
         return view('informasi.galeri');
+    }
+
+    public function login(){
+        return view('sections.login');
     }
 }

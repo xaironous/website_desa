@@ -9,12 +9,9 @@
                 <a class="nav-link">Profil</a>
                 <ul class="sub-menu">
                     <li><a href="/visi-misi">Visi dan Misi</a></li>
-                    <li><a href="/asal-usul-desa">Asal Usul Desa</a></li>
-                    <li><a href="/sejarah-desa">Sejarah</a></li>
-                    <li><a href="/legenda-dan-cerita-rakyat">Legenda dan Cerita Rakyat</a></li>
-                    <li><a href="/lokasi">Lokasi</a></li>
-                    <li><a href="/topografi">Topografi</a></li>
-                    <li><a href="/penduduk">Penduduk</a></li>
+                    <li><a href="/sejarah-desa">Sejarah Desa</a></li>
+                    <li><a href="/geografis-desa">Geografis Desa</a></li>
+                    <li><a href="/demografis-desa">Demografis Desa</a></li>
                 </ul>
             </li>
             <li>
@@ -42,7 +39,7 @@
             </li>
         </ul>
         <div class="login-button">
-            <a href=""><button>Login</button></a>
+            <a href="/login"><button>Login</button></a>
         </div>
     </nav>
 </header>
