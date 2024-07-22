@@ -51,7 +51,7 @@ main {
 }
 
 .small-label {
-    font-size: 1em;
+    font-size: 0.8em;
     color: black;
 }
 
@@ -663,7 +663,7 @@ body {
     margin-bottom: 10px;
 }
 
-#profil-section, #produk-section {
+#profil-section {
     background-color: #f9f9f9;
     padding-bottom: 50px;
     padding-top: 50px;
@@ -746,9 +746,9 @@ body {
 /* STRUKTUR DESA */
 
 .struktur-container {
-    padding-left: 150px;
     margin-right: auto;
     margin-left: auto;
+    padding-top: 40px;
     flex-direction: column;
 }
 
@@ -756,24 +756,42 @@ body {
     position: relative;
     display: flex;
     flex-direction: row;
+    gap: 30px;
     width: 100%;
     height: max-content;
 }
 
 .struktur-card {
+    background-color: rgba(242, 242, 242, 0.696);
     position: relative;
+    padding: 10px;
     width: 33%;
     margin-top: 25px;
     margin-bottom: 25px;
     display: flex;
     flex-direction: row;
     align-items: right;
+    border-radius: 10px;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.375);
+    transition: box-shadow 100ms ease-in-out;
+    transition: transform 100ms ease-in-out;
+}
+
+.struktur-card:hover{
+    transform: translate(-5px,-5px);
+    box-shadow: 2px 5px 4px rgba(0, 0, 0, 0.375);
+    cursor: pointer;
+}
+
+.struktur-card:focus-within{
+    transform: translate(-3px,-3px);
+    box-shadow: 2px 3px 2px rgba(0, 0, 0, 0.375);
 }
 
 .struktur-card-img-box {
     position: sticky;
     border-radius: 100%;
-    border: 1px solid black;
+    border: 1px solid rgba(134, 134, 134, 0.232);
     width: 100px;
     height: 100px;
 }
@@ -786,9 +804,18 @@ body {
 }
 
 .struktur-card-text-box {
+    display: flex;
+    margin-left: 20px;
+    flex-direction: column;
     position: sticky;
     width: max-content;
     height: max-content;
+}
+
+.struktur-card-text-box text {
+    line-height: 1.6;
+    margin-bottom: 16px;
+    text-align: left;
 }
 
 /* LEMBAGA DESA */
@@ -799,6 +826,12 @@ body {
 
 .lembaga-desc {
     font-weight: normal;
+}
+
+/* UNIVERSAL SPACE */
+
+.space_40px {
+    padding-bottom: 40px;
 }
 
 /* TABLE TYPE */

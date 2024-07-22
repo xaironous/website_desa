@@ -9,7 +9,7 @@
                 <canvas id="jumlah-penduduk-chart"></canvas>
                 <script>
                     var xValues = ["Laki-Laki", "Perempuan"];
-                    var yValues = [3533, 3556];
+                    var yValues = ["3533", "3556"];
                     var barColors = [
                     "#059212",
                     "#06D001",
@@ -226,7 +226,7 @@
                 </table>
             </div>
         </div>
-        
+
         <div class="charts">
             <div class="chart">
                 <canvas id="persebaran-chart"></canvas>

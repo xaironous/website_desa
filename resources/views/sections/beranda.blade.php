@@ -13,7 +13,7 @@
     </section>
 </section>
 
-<section id="logo-desa" class="logo-desa-section">
+<section id="logo-desa" class="logo-desa-section page">
     <div class="logo-container">
         <img src="images/logo-desa.png" alt="Logo Desa">
         <div class="logo-description">
@@ -39,7 +39,7 @@
     </div>
 </section>
 
-        <section id="profil-desa" class="profil-desa-section">
+        <section id="profil-desa" class="profil-desa-section page">
             <div>
                 <h2>Profil Singkat Desa</h2>
                 <div class="profil-container">
@@ -79,32 +79,7 @@
             <div class="swiper-slide news-item">
                 <img src="images/image1.jpg" alt="News 1">
                 <h4>Ini judul berita...</h4>
-                <p class="news-meta">CNN News • 10 hours ago • Travel • 6 min read</p>
-            </div>
-            <div class="swiper-slide news-item">
-                <img src="images/image2.jpg" alt="News 2">
-                <h4>Ini Judul berita...</h4>
-                <p class="news-meta">BBC News • 11 hours ago • Work • 9 min read</p>
-            </div>
-            <div class="swiper-slide news-item">
-                <img src="images/image3.jpg" alt="News 3">
-                <h4>Ini Judul Berita...</h4>
-                <p class="news-meta">CNN News • 11 hours ago • Technology • 9 min read</p>
-            </div>
-            <div class="swiper-slide news-item">
-                <img src="images/image4.jpg" alt="News 5">
-                <h4>Ini Judul Berita...</h4>
-                <p class="news-meta">CNN • 11 hours ago • Culture • 8 min read</p>
-            </div>
-            <div class="swiper-slide news-item">
-                <img src="images/image4.jpg" alt="News 5">
-                <h4>Ini Judul Berita...</h4>
-                <p class="news-meta">CNN • 11 hours ago • Culture • 8 min read</p>
-            </div>
-            <div class="swiper-slide news-item">
-                <img src="images/image4.jpg" alt="News 5">
-                <h4>Ini Judul Berita...</h4>
-                <p class="news-meta">CNN • 11 hours ago • Culture • 8 min read</p>
+                <p class="news-meta">Sukolilo, 19 Juli 2024</p>
             </div>
             <!-- Tambahkan lebih banyak slide sesuai kebutuhan -->
         </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PageController extends Controller
 {
@@ -31,11 +32,17 @@ class PageController extends Controller
     }
 
     public function perangkat(){
-        return view('pemerintahan.perangkat');
+
+        $perangkat = DB::table('profil_struktur')->get();
+
+        return view('pemerintahan.perangkat', ['perangkat' => $perangkat]);
     }
 
     public function lembaga(){
-        return view('pemerintahan.lembaga');
+
+        $lembaga = DB::table('lembaga_desa')->get();
+
+        return view('pemerintahan.lembaga', ['lembaga' => $lembaga]);
     }
 
     public function sda(){
