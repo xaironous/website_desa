@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Galeri extends Model
+class GaleriVideo extends Model
 {
-    protected $table = 'galeri';
+    protected $table = 'galeri_video';
 
     public $timestamps = false;
     
@@ -16,7 +16,7 @@ class Galeri extends Model
         'id',
         'judul',
         'tanggal',
-        'foto_galeri',
+        'youtubeid',
         'penjelasan'
     ];
 }

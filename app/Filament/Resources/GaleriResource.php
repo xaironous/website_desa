@@ -21,9 +21,9 @@ class GaleriResource extends Resource
 
     protected static ?string $navigationGroup = "Berita & Galeri";
 
-    protected static ?string $navigationLabel = 'Galeri';
-    protected static ?string $label = 'Galeri';
-    protected static ?string $pluralLabel = 'Galeri';
+    protected static ?string $navigationLabel = 'Galeri Foto';
+    protected static ?string $label = 'Galeri Foto';
+    protected static ?string $pluralLabel = 'Galeri Foto';
 
     public static function form(Form $form): Form
     {

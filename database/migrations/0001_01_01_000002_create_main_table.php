@@ -100,6 +100,14 @@ return new class extends Migration
             $table->longText('penjelasan');
         });
 
+        Schema::create('galeri', function (Blueprint $table) {
+            $table->integer('id')->primary();
+            $table->text('judul');
+            $table->dateTime('tanggal');
+            $table->text('youtubeid');
+            $table->longText('penjelasan');
+        });
+
     }
 
     /**

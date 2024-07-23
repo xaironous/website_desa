@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 23, 2024 at 10:40 AM
+-- Generation Time: Jul 23, 2024 at 01:34 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -65,8 +65,8 @@ INSERT INTO `cache` (`key`, `value`, `expiration`) VALUES
 ('356a192b7913b04c54574d18c28d46e6395428ab:timer', 'i:1721707630;', 1721707630),
 ('62dcdddd2131784090e8a5916c260a90678e71b3', 'i:1;', 1721716417),
 ('62dcdddd2131784090e8a5916c260a90678e71b3:timer', 'i:1721716417;', 1721716417),
-('a17961fa74e9275d529f489537f179c05d50c2f3', 'i:1;', 1721723390),
-('a17961fa74e9275d529f489537f179c05d50c2f3:timer', 'i:1721723390;', 1721723390),
+('a17961fa74e9275d529f489537f179c05d50c2f3', 'i:1;', 1721734460),
+('a17961fa74e9275d529f489537f179c05d50c2f3:timer', 'i:1721734460;', 1721734460),
 ('da4b9237bacccdf19c0760cab7aec4a8359010b0', 'i:1;', 1721724048),
 ('da4b9237bacccdf19c0760cab7aec4a8359010b0:timer', 'i:1721724047;', 1721724048);
 
@@ -166,7 +166,21 @@ CREATE TABLE `galeri` (
 --
 
 INSERT INTO `galeri` (`id`, `judul`, `tanggal`, `foto_galeri`, `penjelasan`) VALUES
-(1, 'LOG', '2024-07-23 10:47:30', '01J3EV7PZRR8R0DEEAW59BJ2CF.png', '');
+(1, 'LOG', '2024-07-23 10:47:30', '01J3EV7PZRR8R0DEEAW59BJ2CF.png', 'ABC');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `galeri_video`
+--
+
+CREATE TABLE `galeri_video` (
+  `id` int(11) NOT NULL,
+  `judul` text NOT NULL,
+  `tanggal` datetime NOT NULL DEFAULT current_timestamp(),
+  `youtubeid` text NOT NULL,
+  `penjelasan` longtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -407,7 +421,8 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('SZdK21gxPXz2DJgPPZvWXRx658i7lVg9dU38yffv', 2, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoieUVYeFRVVjYwaVNyZEhXNmRsNmpSZFp3bWw0V0djYW10Q0JsR3NEYiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDM6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9wZXJhbmdrYXQtZGVzYXMiO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToyO3M6MTc6InBhc3N3b3JkX2hhc2hfd2ViIjtzOjYwOiIkMnkkMTIkOU5Kc2lEanpiMXM2VHdabHRGVVZNZVk2dUFONW03dlYuaXU5UUouMWpMdU1LLzQyLmFxZkciO3M6ODoiZmlsYW1lbnQiO2E6MDp7fX0=', 1721723998),
+('gtl6YBD464v3gcFEm5uChAG3ueaRx9pRvXGpyKMd', 2, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoieGhSQ3d5V1Z5ejZqa2tYOUswZG45V1Roak1PWmtINk10bkhVdTA4WiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi91c2VycyI7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjI7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjA6IiQyeSQxMiQ5TkpzaURqemIxczZUd1psdEZVVk1lWTZ1QU41bTd2Vi5pdTlRSi4xakx1TUsvNDIuYXFmRyI7fQ==', 1721725323),
+('rx6KwbDuUoYrXtP0C4O7SYUbMkZFxTpcMObZs7nV', 2, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoidmtleFVva3ZRdTlIeU5uU041OFJyMEh2TGhrSGNzb0JjM2xYWGhETyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzU6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9nYWxlcmlzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MjtzOjE3OiJwYXNzd29yZF9oYXNoX3dlYiI7czo2MDoiJDJ5JDEyJDlOSnNpRGp6YjFzNlR3Wmx0RlVWTWVZNnVBTjVtN3ZWLml1OVFKLjFqTHVNSy80Mi5hcWZHIjtzOjg6ImZpbGFtZW50IjthOjA6e319', 1721734426),
 ('YYZUtWQef14qd9xYZbL9UKKh2XsYisjoivoT21JF', 2, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiaGlJcVdsaVBsaklRWnppaDBzREdIVklPZGpTNGx5U2o0TDhJb1dqWSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MTIzOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvbG9naW4/X3Rva2VuPWhpSXFXbGlQbGpJUVp6aWgwc0RHSFZJT2RqUzRseVNqNEw4SW9XalkmZW1haWw9YWdlbmdudXJraG95cmklNDBnbWFpbC5jb20mcGFzc3dvcmQ9YWRtaW4iO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToyO3M6MTc6InBhc3N3b3JkX2hhc2hfd2ViIjtzOjYwOiIkMnkkMTIkOU5Kc2lEanpiMXM2VHdabHRGVVZNZVk2dUFONW03dlYuaXU5UUouMWpMdU1LLzQyLmFxZkciO30=', 1721718088);
 
 -- --------------------------------------------------------
@@ -553,6 +568,12 @@ ALTER TABLE `galeri`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `galeri_video`
+--
+ALTER TABLE `galeri_video`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `jenis_kelamin`
 --
 ALTER TABLE `jenis_kelamin`
@@ -682,6 +703,12 @@ ALTER TABLE `fasilitas_pendidikan`
 --
 ALTER TABLE `galeri`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `galeri_video`
+--
+ALTER TABLE `galeri_video`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `jenis_kelamin`
