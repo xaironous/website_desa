@@ -12,81 +12,92 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('penggunaan_lahan', function (Blueprint $table) {
+            $table->integer('id')->primary();
             $table->text('nama')->unique();
-            $table->text('jumlah');
+            $table->integer('jumlah');
         });
 
         Schema::create('fasilitas_pendidikan', function (Blueprint $table) {
+            $table->integer('id')->primary();
             $table->text('nama')->unique();
-            $table->text('jumlah');
+            $table->integer('jumlah');
         });
 
         Schema::create('fasilitas_kesehatan', function (Blueprint $table) {
+            $table->integer('id')->primary();
             $table->text('nama')->unique();
-            $table->text('jumlah');
+            $table->integer('jumlah');
         });
 
         Schema::create('jenis_kelamin', function (Blueprint $table) {
+            $table->integer('id')->primary();
             $table->text('jenis')->unique();
-            $table->text('jumlah');
+            $table->integer('jumlah');
         });
 
         Schema::create('tingkat_pendidikan', function (Blueprint $table) {
+            $table->integer('id')->primary();
             $table->text('tingkat')->unique();
-            $table->text('jumlah');
+            $table->integer('jumlah');
         });
 
         Schema::create('jenis_pekerjaan', function (Blueprint $table) {
+            $table->integer('id')->primary();
             $table->text('pekerjaan')->unique();
-            $table->text('jumlah');
+            $table->integer('jumlah');
         });
 
         Schema::create('kelahiran_kematian', function (Blueprint $table) {
+            $table->integer('id')->primary();
             $table->text('tahun')->unique();
-            $table->text('kelahiran');
-            $table->text('kematian');
+            $table->integer('kelahiran');
+            $table->integer('kematian');
         });
 
         Schema::create('profil_struktur', function (Blueprint $table) {
+            $table->integer('id')->primary();
             $table->text('nama')->unique();
             $table->text('jabatan');
             $table->text('foto_profil');
         });
 
         Schema::create('lembaga_desa', function (Blueprint $table) {
+            $table->integer('id')->primary();
             $table->text('nama')->unique();
             $table->text('singkatan')->nullable();
             $table->text('alamat');
         });
 
         Schema::create('sumber_pertanian', function (Blueprint $table) {
+            $table->integer('id')->primary();
             $table->text('jenis')->unique();
-            $table->text('luas_lahan');
-            $table->text('hasil');
+            $table->float('luas_lahan');
+            $table->integer('hasil');
         });
 
         Schema::create('sumber_peternakan', function (Blueprint $table) {
+            $table->integer('id')->primary();
             $table->text('jenis')->unique();
-            $table->text('jumlah_ternak');
-            $table->text('hasil');
-        });
-
-        Schema::create('wisata_desa', function (Blueprint $table) {
-            $table->text('nama')->unique();
-            $table->text('deskripsi');
-            $table->text('foto_wisata');
+            $table->integer('jumlah_ternak');
+            $table->integer('pemilik');
         });
 
         Schema::create('berita', function (Blueprint $table) {
+            $table->integer('id')->primary();
             $table->text('judul');
-            $table->text('tanggal');
+            $table->dateTime('tanggal');
             $table->text('foto_berita');
+            $table->longText('isi_berita');
+            $table->timestamp('created_at');
+            $table->timestamp('updated_at');
         });
 
         Schema::create('galeri', function (Blueprint $table) {
+            $table->integer('id')->primary();
             $table->text('judul');
-            $table->text('tanggal');
+            $table->dateTime('tanggal');
             $table->text('foto_galeri');
+            $table->longText('penjelasan');
         });
 
     }
@@ -107,7 +118,6 @@ return new class extends Migration
         Schema::dropIfExists('lembaga_desa');
         Schema::dropIfExists('sumber_pertanian');
         Schema::dropIfExists('sumber_peternakan');
-        Schema::dropIfExists('wisata_desa');
         Schema::dropIfExists('berita');
         Schema::dropIfExists('galeri');
     }

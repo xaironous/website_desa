@@ -106,7 +106,7 @@
                             </div>
                         @endif
                     </div>
-                    <form method="POST" action="/login">
+                    <form method="GET" action="/login">
                         @csrf
                         <div class="form-group">
                             <input type="email" class="form-control" id="inputEmail" placeholder="Email Anda" name="email" required>

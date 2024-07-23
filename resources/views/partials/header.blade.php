@@ -39,7 +39,7 @@
             </li>
         </ul>
         <div class="login-button">
-            <a href="/login"><button>Login</button></a>
+            <a href="/admin/login"><button>Login</button></a>
         </div>
     </nav>
 </header>
