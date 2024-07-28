@@ -15,22 +15,22 @@
 
 <section id="logo-desa" class="logo-desa-section page">
     <div class="logo-container">
-        <img src="images/logo-desa.png" alt="Logo Desa">
         <div class="logo-description">
             <h2>Tentang Logo Desa</h2>
+            <img class="big-logo" src="images/logo_desa.png" alt="Logo Desa">
             <div class="logo-elements">
                 <div class="logo-element">
-                    <img src="images/pancasila.png" alt="Pancasila">
+                    <img class="medium-logo" src="images/garuda.png" alt="Pancasila">
                     <h3>Pancasila</h3>
                     <p>Sebagai ideologi negara Indonesia.</p>
                 </div>
                 <div class="logo-element">
-                    <img src="images/gentong.png" alt="Gentong">
+                    <img class="medium-logo" src="images/gentong.png" alt="Gentong">
                     <h3>Gentong</h3>
                     <p>Lambang dari wisata gentong mas.</p>
                 </div>
                 <div class="logo-element">
-                    <img src="images/keris.png" alt="Keris">
+                    <img class="medium-logo" src="images/keris.png" alt="Keris">
                     <h3>Keris</h3>
                     <p>Melambangkan power/kekuatan.</p>
                 </div>
@@ -73,6 +73,19 @@
             </div>
         </section>
 
+        <section class="profil-desa-section">
+            <h2>Mars Desa Sukolilo</h2>
+            <iframe
+            src="https://www.youtube.com/embed/MoAK-J3rSlM?si=2tENu1yJlwPRwW-W"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            class="iframe-player">
+            </iframe>
+        </section>
+
 <section id="berita" class="news-section">
     <div class="swiper-container news-grid">
         <div class="swiper-wrapper">
@@ -81,7 +94,6 @@
                 <h4>Ini judul berita...</h4>
                 <p class="news-meta">Sukolilo, 19 Juli 2024</p>
             </div>
-            <!-- Tambahkan lebih banyak slide sesuai kebutuhan -->
         </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>

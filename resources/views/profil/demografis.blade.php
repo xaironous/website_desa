@@ -8,8 +8,8 @@
             <div class="chart">
                 <canvas id="jumlah-penduduk-chart"></canvas>
                 <script>
-                    var xValues = ["Laki-Laki", "Perempuan"];
-                    var yValues = ["3533", "3556"];
+                    var xValues = ["{{$penduduk[0]->jenis}}", "{{$penduduk[1]->jenis}}"];
+                    var yValues = [{{$penduduk[0]->jumlah}}, {{$penduduk[1]->jumlah}}];
                     var barColors = [
                     "#059212",
                     "#06D001",
@@ -49,17 +49,20 @@
                     </tr>
                     <tr>
                         <td>1</td>
-                        <td>Laki-laki</td>
-                        <td>3,533</td>
+                        <td>{{$penduduk[0]->jenis}}</td>
+                        <td>{{$penduduk[0]->jumlah}}</td>
                     </tr>
                     <tr>
                         <td>2</td>
-                        <td>Perempuan</td>
-                        <td>3,556</td>
+                        <td>{{$penduduk[1]->jenis}}</td>
+                        <td>{{$penduduk[1]->jumlah}}</td>
                     </tr>
                     <tr>
                         <td colspan='2'>Total</td>
-                        <td>7,089</td>
+                        @php
+                         $total_penduduk = $penduduk[0]->jumlah + $penduduk[1]->jumlah;
+                        @endphp
+                        <td>{{$total_penduduk}}</td>
                     </tr>
                 </table>
             </div>
@@ -68,8 +71,20 @@
             <div class="chart">
                 <canvas id="pendidikan-penduduk-chart"></canvas>
                 <script>
-                    var xValues = ["Buta Huruf", "SD", "SLTP/SMP", "SLTA/SMA", "Perguruan Tinggi"];
-                    var yValues = [236, 584, 713, 365, 70];
+                    var xValues = [
+                        "{{$pendidikan[0]->tingkat}}",
+                        "{{$pendidikan[1]->tingkat}}",
+                        "{{$pendidikan[2]->tingkat}}",
+                        "{{$pendidikan[3]->tingkat}}",
+                        "{{$pendidikan[4]->tingkat}}"
+                    ];
+                    var yValues = [
+                        {{$pendidikan[0]->jumlah}},
+                        {{$pendidikan[1]->jumlah}},
+                        {{$pendidikan[2]->jumlah}},
+                        {{$pendidikan[3]->jumlah}},
+                        {{$pendidikan[4]->jumlah}}
+                    ];
                     var barColors = [
                     "#059212",
                     "#06D001",
@@ -105,39 +120,33 @@
             </div>
             <div class="chart">
                 <table class="content-table">
+                    @php
+                        $count = 1;
+                    @endphp
                     <tr>
                         <th>No.</th>
                         <th>Tingkat Pendidikan</th>
                         <th>Jumlah(Jiwa)</th>
                     </tr>
+                    @foreach ($pendidikan as $p)
                     <tr>
-                        <td>1</td>
-                        <td>Buta Huruf</td>
-                        <td>236</td>
+                        <td>{{$count}}</td>
+                        <td>{{$p->tingkat}}</td>
+                        <td>{{$p->jumlah}}</td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>SD</td>
-                        <td>584</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>SLTP/SMP</td>
-                        <td>713</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>SLTA/SMA</td>
-                        <td>365</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Perguruan Tinggi</td>
-                        <td>70</td>
-                    </tr>
+                        @php
+                            $count++;
+                        @endphp
+                    @endforeach
                     <tr>
                         <td colspan='2'>Total</td>
-                        <td>1,973</td>
+                        @php
+                            $total_pendidikan = 0;
+                            foreach ($pendidikan as $p) {
+                                $total_pendidikan += $p->jumlah;
+                            }
+                        @endphp
+                        <td>{{$total_pendidikan}}</td>
                     </tr>
                 </table>
             </div>
@@ -146,8 +155,22 @@
             <div class="chart">
                 <canvas id="mata-pencaharian-chart"></canvas>
                 <script>
-                    var xValues = ["Petani", "Buruh Tani", "PNS", "Pegawai Swasta", "Wirausahawan", "Tidak Bekerja"];
-                    var yValues = [1504, 1461, 89, 325, 2323, 1264];
+                    var xValues = [
+                        "{{$pekerjaan[0]->pekerjaan}}",
+                        "{{$pekerjaan[1]->pekerjaan}}",
+                        "{{$pekerjaan[2]->pekerjaan}}",
+                        "{{$pekerjaan[3]->pekerjaan}}",
+                        "{{$pekerjaan[4]->pekerjaan}}",
+                        "{{$pekerjaan[5]->pekerjaan}}"
+                    ];
+                    var yValues = [
+                        {{$pekerjaan[0]->jumlah}},
+                        {{$pekerjaan[1]->jumlah}},
+                        {{$pekerjaan[2]->jumlah}},
+                        {{$pekerjaan[3]->jumlah}},
+                        {{$pekerjaan[4]->jumlah}},
+                        {{$pekerjaan[5]->jumlah}}
+                    ];
                     var barColors = [
                     "#059212",
                     "#06D001",
@@ -191,37 +214,46 @@
                     </tr>
                     <tr>
                         <td>1</td>
-                        <td>Petani</td>
-                        <td>1,504</td>
+                        <td>{{$pekerjaan[0]->pekerjaan}}</td>
+                        <td>{{$pekerjaan[0]->jumlah}}</td>
                     </tr>
                     <tr>
                         <td>2</td>
-                        <td>Buruh Tani</td>
-                        <td>1,461</td>
+                        <td>{{$pekerjaan[1]->pekerjaan}}</td>
+                        <td>{{$pekerjaan[1]->jumlah}}</td>
                     </tr>
                     <tr>
                         <td>3</td>
-                        <td>PNS</td>
-                        <td>89</td>
+                        <td>{{$pekerjaan[2]->pekerjaan}}</td>
+                        <td>{{$pekerjaan[2]->jumlah}}</td>
                     </tr>
                     <tr>
                         <td>4</td>
-                        <td>Pegawai Swasta</td>
-                        <td>325</td>
+                        <td>{{$pekerjaan[3]->pekerjaan}}</td>
+                        <td>{{$pekerjaan[3]->jumlah}}</td>
                     </tr>
                     <tr>
                         <td>5</td>
-                        <td>Wirausahawan</td>
-                        <td>2,323</td>
+                        <td>{{$pekerjaan[4]->pekerjaan}}</td>
+                        <td>{{$pekerjaan[4]->jumlah}}</td>
                     </tr>
                     <tr>
                         <td>6</td>
-                        <td>Tidak Bekerja</td>
-                        <td>1,264</td>
+                        <td>{{$pekerjaan[5]->pekerjaan}}</td>
+                        <td>{{$pekerjaan[5]->jumlah}}</td>
                     </tr>
                     <tr>
                         <td colspan='2'>Total</td>
-                        <td>7,056</td>
+                        @php
+                            $total_pekerjaan =
+                            $pekerjaan[0]->jumlah +
+                            $pekerjaan[1]->jumlah +
+                            $pekerjaan[2]->jumlah +
+                            $pekerjaan[3]->jumlah +
+                            $pekerjaan[4]->jumlah +
+                            $pekerjaan[5]->jumlah;
+                        @endphp
+                        <td>{{$total_pekerjaan}}</td>
                     </tr>
                 </table>
             </div>
@@ -231,20 +263,22 @@
             <div class="chart">
                 <canvas id="persebaran-chart"></canvas>
                 <script>
-                    const xValues2 = [2019, 2020, 2021, 2022, 2023, 2024];
-
+                    var tahun = <?php echo json_encode($natalitas); ?>;
+                    const xValues2 = tahun.map(item => item.tahun)
+                    const kelahiran = tahun.map(item => item.kelahiran)
+                    const kematian = tahun.map(item => item.kematian)
                     new Chart("persebaran-chart", {
                     type: "line",
                     data: {
                         labels: xValues2,
                         datasets: [{
                         label: 'Tingkat Kelahiran',
-                        data: [88, 111, 103, 96, 94, 33],
+                        data: kelahiran,
                         borderColor: "#059212",
                         fill: false
                         },{
                         label: 'Tingkat Kematian',
-                        data: [86, 113, 105, 71, 62, 53],
+                        data: kematian,
                         borderColor: "#06D001",
                         fill: false
                         }]
@@ -266,30 +300,21 @@
                 <table class="content-table">
                     <tr>
                         <th></th>
-                        <th>2019</th>
-                        <th>2020</th>
-                        <th>2021</th>
-                        <th>2022</th>
-                        <th>2023</th>
-                        <th>2024</th>
+                        @foreach ($natalitas as $n)
+                            <th>{{$n->tahun}}</th>
+                        @endforeach
                     </tr>
                     <tr>
                         <td>Angka Kelahiran</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        @foreach ($natalitas as $n)
+                            <td>{{$n->kelahiran}}</td>
+                        @endforeach
                     </tr>
                     <tr>
                         <td>Angka Kematian</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        @foreach ($natalitas as $n)
+                            <td>{{$n->kematian}}</td>
+                        @endforeach
                     </tr>
                 </table>
             </div>

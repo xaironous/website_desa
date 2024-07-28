@@ -27,15 +27,6 @@ return new class extends Migration
             $table->timestamp('created_at')->nullable();
         });
 
-        Schema::create('failed_jobs', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('connection');
-            $table->string('queue');
-            $table->longText('payload');
-            $table->longText('exception');
-            $table->timestamp('failed_at')->useCurrent();
-        });
-
         Schema::create('sessions', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->foreignId('user_id')->nullable()->index();
@@ -45,25 +36,6 @@ return new class extends Migration
             $table->integer('last_activity')->index();
         });
 
-        Schema::create('jobs', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('queue');
-            $table->unsignedInteger('attempts');
-            $table->timestamp('reserved_at')->nullable();
-            $table->timestamp('available_at');
-            $table->timestamp('created_at');
-            $table->longText('payload');
-        });
-
-        Schema::create('notifications', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('type');
-            $table->text('notifiable_type');
-            $table->bigInteger('notifiable_id');
-            $table->text('data');
-            $table->timestamp('read_at')->nullable();
-            $table->timestamps();
-        });
     }
 
     /**
@@ -74,8 +46,5 @@ return new class extends Migration
         Schema::dropIfExists('users');
         Schema::dropIfExists('password_reset_tokens');
         Schema::dropIfExists('sessions');
-        Schema::dropIfExists('failed_jobs');
-        Schema::dropIfExists('jobs');
-        Schema::dropIfExists('notification');
     }
 };

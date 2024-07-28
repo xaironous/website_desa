@@ -36,6 +36,18 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    var wisataButton = document.querySelectorAll('wisata-button');
+    wisataButton.forEach(function (link) {
+        link.addEventListener('click', function () {
+            wisataButton.forEach(function (link) {
+                link.classList.remove('active');
+                link.querySelector('material-symbols-outlined').textContent = 'arrow_forward_ios'
+            });
+            this.classList.add('active');
+            link.querySelector('material-symbols-outlined').textContent = 'keyboard_arrow_down'
+        });
+    });
+
     var swiper = new Swiper('.swiper-container', {
         slidesPerView: 4,
         spaceBetween: 20,

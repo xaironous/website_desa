@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use phpDocumentor\Reflection\Types\Null_;
 
 class PageController extends Controller
 {
@@ -20,11 +21,29 @@ class PageController extends Controller
     }
 
     public function demografis(){
-        return view('profil.demografis');
+        $penduduk = DB::table('jenis_kelamin')->get();
+        $pendidikan = DB::table('tingkat_pendidikan')->get();
+        $pekerjaan = DB::table('jenis_pekerjaan')->get();
+        $natalitas = DB::table('kelahiran_kematian')->get();
+        return view('profil.demografis',
+            [
+                'penduduk' => $penduduk,
+                'pendidikan' => $pendidikan,
+                'pekerjaan' => $pekerjaan,
+                'natalitas' => $natalitas
+            ]
+        );
     }
 
     public function geografis(){
-        return view('profil.geografis');
+        $lahan = DB::table('penggunaan_lahan')->get();
+        $fasil_kesehatan = DB::table('fasilitas_kesehatan')->get();
+        $fasil_pendidikan = DB::table('fasilitas_pendidikan')->get();
+        return view('profil.geografis',[
+            'lahan' => $lahan,
+            'fasil_kesehatan' => $fasil_kesehatan,
+            'fasil_pendidikan' => $fasil_pendidikan
+        ]);
     }
 
     public function struktur(){
@@ -46,7 +65,13 @@ class PageController extends Controller
     }
 
     public function sda(){
-        return view('potensi.sda');
+
+        $pertanian = DB::table('sumber_pertanian')->get();
+        $peternakan = DB::table('sumber_peternakan')->get();
+        return view('potensi.sda', [
+            'pertanian' => $pertanian,
+            'peternakan' => $peternakan
+        ]);
     }
 
     public function produk(){
@@ -58,11 +83,18 @@ class PageController extends Controller
     }
 
     public function berita(){
-        return view('informasi.berita');
+
+        $berita = DB::table('berita')->paginate(12);
+
+        return view('informasi.berita', ['berita' => $berita]);
     }
 
     public function galeri(){
-        return view('informasi.galeri');
+
+        $foto = DB::table('galeri')->paginate(6);
+        $video = DB::table('galeri_video')->paginate(1);
+
+        return view('informasi.galeri', ['foto' => $foto, 'video' => $video]);
     }
 
     public function login(){

@@ -25,6 +25,10 @@ main {
 
 /* FONT SIZE */
 
+.hero-title {
+    font-size: 5em;
+}
+
 .large-title {
     font-size: 3em;
     color: black;
@@ -51,8 +55,16 @@ main {
 }
 
 .small-label {
-    font-size: 0.8em;
+    font-size: 0.9em;
     color: black;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 300,
+  'GRAD' 0,
+  'opsz' 12
 }
 
 /* ANIMATION */
@@ -707,6 +719,10 @@ body {
     line-height: 1.6;
 }
 
+.justify-text {
+    text-align: justify;
+}
+
 .row:after {
     content: "";
     display: table;
@@ -743,6 +759,36 @@ body {
     margin-left: 0;
 }
 
+/* GEOGRAFIS DESA */
+
+.map-container {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    gap: 20px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.314);
+}
+
+.map-iframe {
+    width: 500px;
+    height: 500px;
+    border: 0px;
+    border-radius: 12px;
+}
+
+.map-iframe-box{
+    flex: 1;
+    display: block;
+}
+
+.map-text-box{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
 /* STRUKTUR DESA */
 
 .struktur-container {
@@ -759,6 +805,12 @@ body {
     gap: 30px;
     width: 100%;
     height: max-content;
+}
+
+.struktur-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .struktur-card {
@@ -828,10 +880,365 @@ body {
     font-weight: normal;
 }
 
+/* WISATA DESA*/
+
+.wisata-section {
+    background-color: black;
+}
+
+.wisata-hero {
+    display: flex;
+    width: 100%;
+    height: 800px;
+    background-color: black;
+    color: white;
+}
+
+.wisata-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+img.wisata-back-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+img.wisata-title-img {
+    width: 70%;
+    height: 70%;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    object-fit: cover;
+}
+
+.wisata-hero-darken {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+.wisata-hero-gradient {
+    width: 100%;
+    height: 200px;
+    bottom: 0px;
+    position: absolute;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+.wisata-hero-gradient-rev {
+    width: 100%;
+    height: 200px;
+    top: 0px;
+    position: absolute;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+.wisata-wrapper {
+    width: 70%;
+    border-radius: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.355);
+}
+
+.wisata-wrapper-90deg{
+    height: 70%;
+    border-radius: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.355);
+}
+
+.wisata-box-container{
+    display: flex;
+    width: 70%;
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.wisata-box-card{
+    display: flex;
+    height: inherit;
+    width: fit-content;
+    flex-direction: column;
+    flex-grow: 1;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.355);
+}
+
+.wisata-title-box {
+    display: flex;
+    font-weight: bold;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.wisata-content-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 20px;
+    width: 100%;
+    max-width: 100%;
+    flex-grow: 1;
+}
+
+.wisata-content-text-box {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 100%;
+    gap: 10px;
+    line-height: 16px;
+}
+
+.wisata-paket-box {
+    display: flex;
+    font-weight: bold;
+    align-items: center;
+    width: 600px;
+    height: 60px;
+    gap: 20px;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.355);
+}
+
+.wisata-title {
+    color: white;
+}
+
+.wisata-paket-bg{
+    width: 28%;
+    height: 100%;
+    object-fit: cover;
+    position: static;
+}
+
+.wisata-paket-bg-gradient{
+    background: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+}
+
+button.wisata-button {
+    display: block;
+    height: fit-content;
+    width: fit-content;
+    color: white;
+    background: none;
+    border-top: 0px;
+    border-left: 0px;
+    border-radius: 100%;
+    transition: color 200ms ease-in-out;
+}
+
+.wisata-button .material-symbols-outlined{
+    font-size: 20px;
+    line-height: 0px;
+    color: yellow;
+}
+
+.wisata-paket-title {
+    position: relative;
+    color: white;
+    z-index: 1;
+}
+
+.wisata-paket-desc {
+    position: relative;
+    color: white;
+    z-index: 1;
+}
+
+.wisata-text-desc {
+    width: 70%;
+    color: white;
+    text-align: justify;
+}
+
+.wisata-box-desc {
+    width: fit-content;
+    color: white;
+    line-height: 30px;
+}
+
+.wisata-container h1.hero-title {
+    padding-bottom: 50px;
+}
+
+/* PRODUK */
+
+.produk-title {
+    color: white;
+}
+
+#produk-section {
+    background: black;
+}
+
+.produk-hero-darken {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+.produk-hero-gradient {
+    width: 100%;
+    height: 200px;
+    bottom: 0px;
+    position: absolute;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+.produk-hero-gradient-rev {
+    width: 100%;
+    height: 200px;
+    top: 0px;
+    position: absolute;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+/* BERITA */
+
+.berita-card {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    height: 420px;
+    gap: 20px;
+    padding: 20px 20px 20px 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.444);
+    background: rgba(250, 233, 208, 0.273);
+}
+
+.berita-card-img {
+    height: 70%;
+    width: 100%;
+    border-radius: inherit;
+    border: inherit;
+}
+
+img.berita-img {
+    width: 100%;
+    height: 100%;
+    position: static;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+.berita-card-text-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 30%;
+    width: 100%;
+}
+
+.berita-title {
+    color: black;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.berita-date {
+    color: rgba(0, 0, 0, 0.556);
+}
+
+/* GALERI */
+
+.galeri-foto-card {
+    display: flex;
+    width: 480px;
+    height: 300px;
+    padding: 10px 10px 10px 10px;
+    background: white;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.595);
+}
+
+.galeri-foto-card img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/* PAGINATION */
+.elements-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.elements-box {
+    display: flex;
+    gap: 20px;
+}
+
+.hidden { display: none; }
+
+.pagination {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.page-button { cursor: pointer; margin: 0 5px; padding: 5px 10px; border: 1px solid #000; }
+
+.page-button.active { background-color: #ddd; }
+
+/* IMAGE ATTRIBUTE */
+
+img.big-logo {
+    width: 240px;
+    height: 240px;
+    padding: 10px 10px 10px 10px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-radius: 100%;
+    border: 1px solid black;
+}
+
+img.medium-logo {
+    width: 120px;
+    height: 120px;
+    padding: 10px 10px 10px 10px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-radius: 100%;
+    border: 1px solid black;
+}
+
 /* UNIVERSAL SPACE */
 
 .space_40px {
     padding-bottom: 40px;
+}
+
+.space_20px {
+    padding-bottom: 20px;
+}
+
+.space_10px {
+    padding-bottom: 10px;
+}
+
+.space_paket_box{
+    width: 10%;
 }
 
 /* TABLE TYPE */
@@ -875,13 +1282,18 @@ table.bw-table {
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: fit-content;
     max-width: 1200px;
+    gap: 10px;
+    margin-bottom: 40px;
+    padding: 20px 20px 20px 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.314);
 }
 
 .chart {
     width: 45%;
-    height: 40vh;
-    padding-top: 50px;
+    height: fit-content;
 }
 
 .chart3 {
@@ -891,12 +1303,11 @@ table.bw-table {
     margin: 0 auto;
 }
 
-.map{
-    flex: 1;
-}
+/* IFRAME */
 
-.map-text{
-    flex: 2;
+.iframe-player {
+    width: 840px;
+    height: 480px;
 }
 
 /* MEDIA CONTENT*/

@@ -4,7 +4,7 @@
 <section id="profil-section">
     <div class="container">
         <h2>SUMBER DAYA ALAM DESA SUKOLILO</h2>
-        
+
         <div class="section-content">
             <h4>PERTANIAN & PERKEBUNAN</h4>
             <div class="content-row">
@@ -13,28 +13,15 @@
                     <tr>
                         <th>Jenis Tanaman</th>
                         <th>Luas Lahan</th>
-                        <th>Hasil</th>
+                        <th>Jumlah Pemilik</th>
                     </tr>
+                    @foreach ($pertanian as $p)
                     <tr>
-                        <td>Jagung</td>
-                        <td>16 Ha</td>
-                        <td>960000 Kg/Ka</td>
+                        <td>{{$p->jenis}}</td>
+                        <td>{{$p->luas_lahan}} Ha</td>
+                        <td>{{$p->hasil}} Kg/Ka</td>
                     </tr>
-                    <tr>
-                        <td>Kacang Tanah</td>
-                        <td>1.5 Ha</td>
-                        <td>120000 Kg/Ka</td>
-                    </tr>
-                    <tr>
-                        <td>Padi</td>
-                        <td>72 Ha</td>
-                        <td>4900000 Kg/Ka</td>
-                    </tr>
-                    <tr>
-                        <td>Cabai</td>
-                        <td>10 Ha</td>
-                        <td>340000 Kg/Ka</td>
-                    </tr>
+                    @endforeach
                 </table>
             </div>
         </div>
@@ -48,21 +35,13 @@
                         <th>Jumlah Ternak</th>
                         <th>Jumlah Pemilik</th>
                     </tr>
+                    @foreach ($peternakan as $p)
                     <tr>
-                        <td>Sapi</td>
-                        <td>973 Ekor</td>
-                        <td>480 Orang</td>
+                        <td>{{$p->jenis}}</td>
+                        <td>{{$p->jumlah_ternak}} Ekor</td>
+                        <td>{{$p->pemilik}} Orang</td>
                     </tr>
-                    <tr>
-                        <td>Kambing</td>
-                        <td>708 Ekor</td>
-                        <td>352 Orang</td>
-                    </tr>
-                    <tr>
-                        <td>Ayam</td>
-                        <td>5.290 Ekor</td>
-                        <td>324 Orang</td>
-                    </tr>
+                    @endforeach
                 </table>
             </div>
         </div>

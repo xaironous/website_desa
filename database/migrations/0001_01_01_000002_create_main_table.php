@@ -89,7 +89,7 @@ return new class extends Migration
             $table->text('foto_berita');
             $table->longText('isi_berita');
             $table->timestamp('created_at');
-            $table->timestamp('updated_at');
+            $table->Timestamp('updated_at')->nullable();
         });
 
         Schema::create('galeri', function (Blueprint $table) {
@@ -100,7 +100,7 @@ return new class extends Migration
             $table->longText('penjelasan');
         });
 
-        Schema::create('galeri', function (Blueprint $table) {
+        Schema::create('galeri_video', function (Blueprint $table) {
             $table->integer('id')->primary();
             $table->text('judul');
             $table->dateTime('tanggal');

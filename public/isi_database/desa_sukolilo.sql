@@ -85,22 +85,6 @@ CREATE TABLE `cache_locks` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `failed_jobs`
---
-
-CREATE TABLE `failed_jobs` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `uuid` varchar(255) NOT NULL,
-  `connection` text NOT NULL,
-  `queue` text NOT NULL,
-  `payload` longtext NOT NULL,
-  `exception` longtext NOT NULL,
-  `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `fasilitas_kesehatan`
 --
 
@@ -225,30 +209,6 @@ INSERT INTO `jenis_pekerjaan` (`id`, `pekerjaan`, `jumlah`) VALUES
 (4, 'Pegawai Swasta', 325),
 (5, 'Wirausahawan', 2356),
 (6, 'Tidak Bekerja', 1264);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `jobs`
---
-
-CREATE TABLE `jobs` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `queue` varchar(255) NOT NULL,
-  `payload` longtext NOT NULL,
-  `attempts` tinyint(3) UNSIGNED NOT NULL,
-  `reserved_at` int(10) UNSIGNED DEFAULT NULL,
-  `available_at` int(10) UNSIGNED NOT NULL,
-  `created_at` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `jobs`
---
-
-INSERT INTO `jobs` (`id`, `queue`, `payload`, `attempts`, `reserved_at`, `available_at`, `created_at`) VALUES
-(1, 'default', '{\"uuid\":\"d9ab39d6-0e0f-4edb-9ac5-33c55738b9f5\",\"displayName\":\"Filament\\\\Notifications\\\\Auth\\\\ResetPassword\",\"job\":\"Illuminate\\\\Queue\\\\CallQueuedHandler@call\",\"maxTries\":null,\"maxExceptions\":null,\"failOnTimeout\":false,\"backoff\":null,\"timeout\":null,\"retryUntil\":null,\"data\":{\"commandName\":\"Illuminate\\\\Notifications\\\\SendQueuedNotifications\",\"command\":\"O:48:\\\"Illuminate\\\\Notifications\\\\SendQueuedNotifications\\\":3:{s:11:\\\"notifiables\\\";O:45:\\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\\":5:{s:5:\\\"class\\\";s:15:\\\"App\\\\Models\\\\User\\\";s:2:\\\"id\\\";a:1:{i:0;i:1;}s:9:\\\"relations\\\";a:0:{}s:10:\\\"connection\\\";s:5:\\\"mysql\\\";s:15:\\\"collectionClass\\\";N;}s:12:\\\"notification\\\";O:41:\\\"Filament\\\\Notifications\\\\Auth\\\\ResetPassword\\\":3:{s:3:\\\"url\\\";s:227:\\\"http:\\/\\/127.0.0.1:8000\\/admin\\/password-reset\\/reset?email=agengnurkhoyri%40gmail.com&token=4058e716c9b452263b188d3c8b2c91eead0d0892e24422f87a0250c3e1f75457&signature=7fae71e5cfbd28d397ebfd1e01b1b3409f6957f0910bf84e0adb91c81b4e668d\\\";s:5:\\\"token\\\";s:64:\\\"4058e716c9b452263b188d3c8b2c91eead0d0892e24422f87a0250c3e1f75457\\\";s:2:\\\"id\\\";s:36:\\\"14087992-35ed-45e6-bfbe-f896e9cffc14\\\";}s:8:\\\"channels\\\";a:1:{i:0;s:4:\\\"mail\\\";}}\"}}', 0, NULL, 1721716236, 1721716236),
-(2, 'default', '{\"uuid\":\"c8546f02-9c75-46ce-9ee1-598333379d06\",\"displayName\":\"Filament\\\\Notifications\\\\Auth\\\\ResetPassword\",\"job\":\"Illuminate\\\\Queue\\\\CallQueuedHandler@call\",\"maxTries\":null,\"maxExceptions\":null,\"failOnTimeout\":false,\"backoff\":null,\"timeout\":null,\"retryUntil\":null,\"data\":{\"commandName\":\"Illuminate\\\\Notifications\\\\SendQueuedNotifications\",\"command\":\"O:48:\\\"Illuminate\\\\Notifications\\\\SendQueuedNotifications\\\":3:{s:11:\\\"notifiables\\\";O:45:\\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\\":5:{s:5:\\\"class\\\";s:15:\\\"App\\\\Models\\\\User\\\";s:2:\\\"id\\\";a:1:{i:0;i:1;}s:9:\\\"relations\\\";a:0:{}s:10:\\\"connection\\\";s:5:\\\"mysql\\\";s:15:\\\"collectionClass\\\";N;}s:12:\\\"notification\\\";O:41:\\\"Filament\\\\Notifications\\\\Auth\\\\ResetPassword\\\":3:{s:3:\\\"url\\\";s:227:\\\"http:\\/\\/127.0.0.1:8000\\/admin\\/password-reset\\/reset?email=agengnurkhoyri%40gmail.com&token=c813523d7b90193d556fed275c49d78405a2ac5fb63352b70d0f9cc1ff45def8&signature=6645adbd31b139dcc8697aef33f5cdf1a33aecdd37ee9975fefc122b96912f9c\\\";s:5:\\\"token\\\";s:64:\\\"c813523d7b90193d556fed275c49d78405a2ac5fb63352b70d0f9cc1ff45def8\\\";s:2:\\\"id\\\";s:36:\\\"41c4bf8d-2261-4a1b-b394-72ceef1bc1ce\\\";}s:8:\\\"channels\\\";a:1:{i:0;s:4:\\\"mail\\\";}}\"}}', 0, NULL, 1721716357, 1721716357);
 
 -- --------------------------------------------------------
 
@@ -541,13 +501,6 @@ ALTER TABLE `cache_locks`
   ADD PRIMARY KEY (`key`);
 
 --
--- Indexes for table `failed_jobs`
---
-ALTER TABLE `failed_jobs`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
-
---
 -- Indexes for table `fasilitas_kesehatan`
 --
 ALTER TABLE `fasilitas_kesehatan`
@@ -586,13 +539,6 @@ ALTER TABLE `jenis_kelamin`
 ALTER TABLE `jenis_pekerjaan`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `jenis_pekerjaan_pekerjaan_unique` (`pekerjaan`) USING HASH;
-
---
--- Indexes for table `jobs`
---
-ALTER TABLE `jobs`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `jobs_queue_index` (`queue`);
 
 --
 -- Indexes for table `kelahiran_kematian`
@@ -681,12 +627,6 @@ ALTER TABLE `berita`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `failed_jobs`
---
-ALTER TABLE `failed_jobs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `fasilitas_kesehatan`
 --
 ALTER TABLE `fasilitas_kesehatan`
@@ -721,12 +661,6 @@ ALTER TABLE `jenis_kelamin`
 --
 ALTER TABLE `jenis_pekerjaan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `jobs`
---
-ALTER TABLE `jobs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `kelahiran_kematian`
