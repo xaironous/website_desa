@@ -9,7 +9,8 @@ use phpDocumentor\Reflection\Types\Null_;
 class PageController extends Controller
 {
     public function beranda(){
-        return view('sections.beranda');
+        $berita = DB::table('berita')->get();
+        return view('sections.beranda', ['berita' => $berita]);
     }
 
     public function visi(){
@@ -91,8 +92,12 @@ class PageController extends Controller
 
     public function galeri(){
 
-        $foto = DB::table('galeri')->paginate(6);
-        $video = DB::table('galeri_video')->paginate(1);
+        $foto = DB::table('galeri')->paginate(
+            12, ['*'], 'foto'
+        );
+        $video = DB::table('galeri_video')->paginate(
+            1, ['*'], 'video'
+        );
 
         return view('informasi.galeri', ['foto' => $foto, 'video' => $video]);
     }

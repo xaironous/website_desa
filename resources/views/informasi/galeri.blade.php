@@ -4,7 +4,7 @@
 <section id="profil-section">
     <div class="container">
         <h2>GALERI FOTO DESA SUKOLILO</h2>
-        <div id="elements-container">
+        <div class="elements-container">
             @php
                 $count = 0;
             @endphp
@@ -26,9 +26,9 @@
                 </div>
             @endif
         </div>
-        <pagination class="pagination">{{ $foto->links() }}</pagination>
+        {{ $foto->links('vendor.pagination.custom') }}
         <h2>GALERI VIDEO DESA SUKOLILO</h2>
-        <div id="elements-container">
+        <div class="elements-container">
             @php
                 $count = 0;
             @endphp
@@ -39,7 +39,7 @@
                     @endif
                     <div class="elements-box">
                 @endif
-                <iframe width="1080" height="600" src="{{$v->youtubeid}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe class="galeri-video" src="{{$v->youtubeid}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             @php
                 $count++;
             @endphp
@@ -48,7 +48,7 @@
                 </div>
             @endif
         </div>
-        <pagination class="pagination">{{ $video->links() }}</pagination>
+        {{ $video->links('vendor.pagination.custom') }}
     </div>
 </section>
 @endsection

@@ -6,7 +6,7 @@
         <img src="images/hero-Image.png" alt="Hero Image">
         <div class="hero-content">
             <h1>SELAMAT <br>DATANG!<br></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>Di Website Desa Sukolilo</p>
             <a href="#logo-desa"><button>KENALI DESA</button></a>
         </div>
         <div class="hero-gradient"></div>
@@ -20,17 +20,17 @@
             <img class="big-logo" src="images/logo_desa.png" alt="Logo Desa">
             <div class="logo-elements">
                 <div class="logo-element">
-                    <img class="medium-logo" src="images/garuda.png" alt="Pancasila">
+                    <img class="medium-logo" src="images/part_logo_desa/Garuda.png" alt="Pancasila">
                     <h3>Pancasila</h3>
                     <p>Sebagai ideologi negara Indonesia.</p>
                 </div>
                 <div class="logo-element">
-                    <img class="medium-logo" src="images/gentong.png" alt="Gentong">
+                    <img class="medium-logo" src="images/part_logo_desa/Gentong.png" alt="Gentong">
                     <h3>Gentong</h3>
                     <p>Lambang dari wisata gentong mas.</p>
                 </div>
                 <div class="logo-element">
-                    <img class="medium-logo" src="images/keris.png" alt="Keris">
+                    <img class="medium-logo" src="images/part_logo_desa/Keris.png" alt="Keris">
                     <h3>Keris</h3>
                     <p>Melambangkan power/kekuatan.</p>
                 </div>
@@ -42,7 +42,8 @@
         <section id="profil-desa" class="profil-desa-section page">
             <div>
                 <h2>Profil Singkat Desa</h2>
-                <div class="profil-container">
+                <img src="images/hero_desa.png" alt="" class="profil-title-img">
+                <div class="profil-desa-container">
                     <div class="profil-elements">
                         <div class="profil-box">
                             <h3 class="small-title">Sejarah</h3>
@@ -89,11 +90,17 @@
 <section id="berita" class="news-section">
     <div class="swiper-container news-grid">
         <div class="swiper-wrapper">
-            <div class="swiper-slide news-item">
-                <img src="images/image1.jpg" alt="News 1">
-                <h4>Ini judul berita...</h4>
-                <p class="news-meta">Sukolilo, 19 Juli 2024</p>
+            @foreach ($berita as $b)
+            <div class="berita-card swiper-slide">
+                <div class="berita-card-img">
+                    <img src="images/image1.jpg" alt="berita" class="berita-img">
+                </div>
+                <div class="berita-card-text-box">
+                    <text class="berita-title medium-label">{{ $b->judul }}</text>
+                    <text class="berita-date">{{ $b->tanggal }}</text>
+                </div>
             </div>
+            @endforeach
         </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>

@@ -1,9 +1,14 @@
 <header id="navbar">
     <div class="logo">
-        <a href="/"><img src="images/logo.png" alt="Logo Sukolilo Waiak"></a>
+        <a href="/"><img src={{asset("images/logo.png")}} alt="Logo Sukolilo Waiak"></a>
     </div>
     <nav>
-        <ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-list">
             <li><a href="/" class="active">Beranda</a></li>
             <li>
                 <a class="nav-link">Profil</a>
@@ -37,9 +42,9 @@
                     <li><a href="/galeri">Galeri</a></li>
                 </ul>
             </li>
+            <div class="login-button">
+                <a href="/admin/login"><button>Login</button></a>
+            </div>
         </ul>
-        <div class="login-button">
-            <a href="/admin/login"><button>Login</button></a>
-        </div>
     </nav>
 </header>

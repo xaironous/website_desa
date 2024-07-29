@@ -53,17 +53,21 @@
                     </button>
                 </div>
                 <div class="wisata-content-box">
-                    <div class="wisata-content-text-box">
+                    <div class="wisata-content-link-box">
+                        <img src="{{asset('images/socials/whatsapp.png')}}" alt="" class="link-box-logo">
                         <text class="wisata-box-desc medium-label">081357150826</text>
                     </div>
-                    <div class="wisata-content-text-box">
-                        <a href='https://www.instagram.com/wisata_gentongmas?igsh=cHZpa3VicHFlNT' class="wisata-box-desc medium-label">instagram</a>
+                    <div class="wisata-content-link-box">
+                        <img src="{{asset('images/socials/instagram.png')}}" alt="" class="link-box-logo">
+                        <a href='https://www.instagram.com/wisata_gentongmas?igsh=cHZpa3VicHFlNT' class="wisata-box-desc medium-label">@wisata_gentongmas</a>
                     </div>
-                    <div class="wisata-content-text-box">
-                        <a href='https://www.tiktok.com/@wisata_gentongmas?_t=8oLSspkSKVV&_r=1' class="wisata-box-desc medium-label">tiktok</a>
+                    <div class="wisata-content-link-box">
+                        <img src="{{asset('images/socials/tiktok.png')}}" alt="" class="link-box-logo">
+                        <a href='https://www.tiktok.com/@wisata_gentongmas?_t=8oLSspkSKVV&_r=1' class="wisata-box-desc medium-label">wisata_gentongmas</a>
                     </div>
-                    <div class="wisata-content-text-box">
-                        <a href='https://www.facebook.com/profile.php?id=100064220916138&mibextid=ZbWKwL' class="wisata-box-desc medium-label">facebook</a>
+                    <div class="wisata-content-link-box">
+                        <img src="{{asset('images/socials/facebook.png')}}" alt="" class="link-box-logo">
+                        <a href='https://www.facebook.com/profile.php?id=100064220916138&mibextid=ZbWKwL' class="wisata-box-desc medium-label">Wisata gentong mas</a>
                     </div>
                 </div>
             </div>

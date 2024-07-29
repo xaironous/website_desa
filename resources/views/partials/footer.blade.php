@@ -14,9 +14,9 @@
                 <p>0851-0077-9312 (Pak Azhar)</p>
                 <p>0857-0651-9821 (Pak Nanda)</p>
                 <div class="social-icons">
-                    <a href="https://www.facebook.com/" target="_blank"><img src="images/socials/facebook.png" alt="Facebook"></a>
-                    <a href="https://www.instagram.com/" target="_blank"><img src="images/socials/instagram.png" alt="Instagram"></a>
-                    <a href="https://www.youtube.com/" target="_blank"><img src="images/socials/youtube.png" alt="YouTube"></a>
+                    <a href="https://www.facebook.com/" target="_blank"><img src="{{asset('images/socials/facebook.png')}}" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/" target="_blank"><img src="{{asset('images/socials/instagram.png')}}" alt="Instagram"></a>
+                    <a href="https://www.youtube.com/" target="_blank"><img src="{{asset('images/socials/youtube.png')}}" alt="YouTube"></a>
                 </div>
             </div>
         </div>

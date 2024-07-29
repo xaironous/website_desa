@@ -15,7 +15,7 @@
                         @endif
                         <div class="elements-box">
                     @endif
-                <div class="berita-card">
+                <a class="berita-card" href="{{ route('informasi.info', ['id' => $b->id]) }}">
                     <div class="berita-card-img">
                         <img src="images/image1.jpg" alt="berita" class="berita-img">
                     </div>
@@ -23,7 +23,7 @@
                         <text class="berita-title medium-label">{{ $b->judul }}</text>
                         <text class="berita-date">{{ $b->tanggal }}</text>
                     </div>
-                </div>
+                </a>
                 @php
                     $count++;
                 @endphp

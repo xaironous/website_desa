@@ -99,6 +99,67 @@ main {
     border: 0.8px solid black;
 }
 
+/* NAVBAR */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+}
+
+.nav-list li {
+    position: relative;
+}
+
+.nav-list a {
+    text-decoration: none;
+    padding: 15px;
+}
+
+.sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    list-style: none;
+    padding: 0;
+}
+
+.sub-menu li a {
+    padding: 10px;
+    white-space: nowrap;
+}
+
+.nav-list li:hover .sub-menu {
+    display: block;
+}
+
+/* Mobile Menu */
+.menu-toggle {
+    height: 36px;
+    width: 36px;
+    background: white;
+    padding: 5px 5px 5px 5px;
+    display: none;
+    margin-left: auto;
+    flex-direction: column;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.bar {
+    height: 3px;
+    width: 25px;
+    background-color: #333;
+    margin: 4px 0;
+}
 
 
 .logo-desa-section {
@@ -137,6 +198,7 @@ main {
     margin-top: 20px;
     width: 100%; /* Ensure it takes the full width */
     gap: 20px; /* Add some gap between elements */
+
 }
 
 .logo-element {
@@ -144,6 +206,9 @@ main {
     max-width: 200px; /* Adjust as needed */
     flex-grow: 1; /* Allow elements to grow and take available space */
     margin: 0 10px; /* Add margin to create space between elements */
+    border-radius: 12px;
+    border: 1px solid black;
+    box-shadow: 0px 3px 0px black;
 }
 
 .logo-element img {
@@ -181,10 +246,21 @@ main {
 }
 
 .profil-container {
-    margin-top: 35px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 20px;
+}
+
+.profil-desa-container {
+    display: flex;
+    width: 70%;
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
     gap: 20px;
 }
 
@@ -213,11 +289,12 @@ main {
 
 .profil-box {
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
     align-content: center;
     justify-content: center;
     width: 300px;
-    height: max-content;
+    height: inherit;
 }
 
 .profil-element {
@@ -226,7 +303,16 @@ main {
     scroll-behavior: smooth;
     flex-grow: 1; /* Biarkan elemen memanjang dan mengambil ruang yang tersedia */
     border-radius: 12px;
+    border: 1px solid black;
     box-shadow: 0px 3px 0px rgba(0, 0, 0, 0.375);
+}
+
+img.profil-title-img {
+    width: 50%;
+    height: 50%;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    object-fit: cover;
 }
 
 .profil-element img {
@@ -259,10 +345,11 @@ main {
 
 .content-image {
     flex: 1;
-    max-width: 100%;
+    max-width: 400px;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    object-fit: contain;
 }
 
 .content-table {
@@ -347,7 +434,7 @@ header nav ul li a {
     padding: 10px 15px;
     transition: color 0.3s ease;
     display: block;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Plus Jakarta Sans', serif;
     font-weight: bold;
     position: relative;
     z-index: 1;
@@ -682,7 +769,7 @@ body {
 }
 
 #produk-section h1 {
-    color: #555;
+    color: rgba(239, 252, 153, 0.921);
 }
 
 #profil-section h2,
@@ -695,6 +782,12 @@ body {
 
 #profil-section h4 {
     font-size: 22px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+#profil-section h5 {
+    font-size: 18px;
     margin-bottom: 20px;
     color: #555;
 }
@@ -721,6 +814,11 @@ body {
 
 .justify-text {
     text-align: justify;
+}
+
+.row{
+    display: flex;
+    align-items: center;
 }
 
 .row:after {
@@ -814,10 +912,10 @@ body {
 }
 
 .struktur-card {
-    background-color: rgba(242, 242, 242, 0.696);
+    background-color: rgba(244, 242, 232, 0.696);
     position: relative;
     padding: 10px;
-    width: 33%;
+    width: 30%;
     margin-top: 25px;
     margin-bottom: 25px;
     display: flex;
@@ -825,8 +923,8 @@ body {
     align-items: right;
     border-radius: 10px;
     box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.375);
-    transition: box-shadow 100ms ease-in-out;
-    transition: transform 100ms ease-in-out;
+    transition: box-shadow 200ms ease-in-out;
+    transition: transform 200ms ease-in-out;
 }
 
 .struktur-card:hover{
@@ -843,7 +941,7 @@ body {
 .struktur-card-img-box {
     position: sticky;
     border-radius: 100%;
-    border: 1px solid rgba(134, 134, 134, 0.232);
+    border: 1px solid rgba(167, 139, 139, 0.232);
     width: 100px;
     height: 100px;
 }
@@ -1004,11 +1102,37 @@ img.wisata-title-img {
     line-height: 16px;
 }
 
+.wisata-content-link-box {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    line-height: 16px;
+}
+
+a.wisata-box-desc {
+    color: rgb(159, 159, 238);
+    text-decoration: none;
+}
+
+a.wisata-box-desc:hover {
+    color: rgb(82, 82, 220);
+    text-decoration: underline;
+}
+
+img.link-box-logo {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
 .wisata-paket-box {
     display: flex;
     font-weight: bold;
     align-items: center;
-    width: 600px;
+    width: 500px;
     height: 60px;
     gap: 20px;
     overflow: hidden;
@@ -1081,6 +1205,7 @@ button.wisata-button {
 
 .produk-title {
     color: white;
+    font-weight: bold;
 }
 
 #produk-section {
@@ -1111,6 +1236,24 @@ button.wisata-button {
     background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
 }
 
+/* INFO */
+
+.info-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+img.info-img {
+    width: 720px;
+    height: 480px;
+    object-fit: cover;
+}
+
 /* BERITA */
 
 .berita-card {
@@ -1122,11 +1265,15 @@ button.wisata-button {
     padding: 20px 20px 20px 20px;
     border-radius: 12px;
     border: 1px solid rgba(0, 0, 0, 0.444);
-    background: rgba(250, 233, 208, 0.273);
+    background: rgba(250, 240, 226, 0.273);
+}
+
+a.berita-card{
+    text-decoration: none;
 }
 
 .berita-card-img {
-    height: 70%;
+    height: 60%;
     width: 100%;
     border-radius: inherit;
     border: inherit;
@@ -1143,8 +1290,10 @@ img.berita-img {
 .berita-card-text-box {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 10px;
-    height: 30%;
+    overflow: hidden;
+    height: 40%;
     width: 100%;
 }
 
@@ -1175,7 +1324,13 @@ img.berita-img {
     height: 100%;
 }
 
+.galeri-video {
+    width: 1080px;
+    height: 600px;
+}
+
 /* PAGINATION */
+
 .elements-container {
     display: flex;
     flex-direction: column;
@@ -1187,13 +1342,33 @@ img.berita-img {
     gap: 20px;
 }
 
-.hidden { display: none; }
+.pagination{
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+}
 
-.pagination {
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
+.page-item{
+    display: flex;
+    border-radius: 6px;
+    border: 1px solid black;
+    padding: 3px 6px 3px 6px;
+    align-items: center;
+    justify-content: center;
+    background: rgba(227, 231, 242, 0.503);
+    color: black;
+}
+
+.page-item.active{
+    background: rgb(248, 220, 127);
+}
+
+.page-item.disabled{
+    visibility: collapse;
+}
+
+.page-link {
+    font-size: 16px;
     color: black;
 }
 
@@ -1208,7 +1383,7 @@ img.big-logo {
     height: 240px;
     padding: 10px 10px 10px 10px;
     margin-top: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
     border-radius: 100%;
     border: 1px solid black;
 }
@@ -1221,6 +1396,18 @@ img.medium-logo {
     margin-bottom: 20px;
     border-radius: 100%;
     border: 1px solid black;
+    object-fit: contain;
+}
+
+/* UNIVERSAL MARGIN */
+
+.center-margin {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center-text {
+    text-align: center;
 }
 
 /* UNIVERSAL SPACE */
@@ -1329,39 +1516,6 @@ table.bw-table {
         padding: 10px 20px; /* Mengurangi padding untuk layar kecil */
     }
 
-    header nav {
-        display: none; /* Sembunyikan navigasi utama */
-        flex-direction: column;
-        position: absolute;
-        top: 80px; /* Sesuaikan dengan tinggi header */
-        left: 0;
-        width: 100%;
-        background-color: #3b4200;
-        padding: 20px 0;
-        z-index: 1000;
-        text-align: center;
-        transition: height 0.3s ease;
-        height: 0;
-        overflow: hidden;
-    }
-
-    header nav.open {
-        height: auto; /* Tampilkan navigasi saat class open diaktifkan */
-    }
-
-    header nav ul {
-        flex-direction: column;
-        gap: 10px;
-        margin-left: 0; /* Hapus margin kiri pada layar kecil */
-    }
-
-    header .menu-toggle {
-        display: block; /* Tampilkan tombol hamburger */
-        font-size: 24px;
-        cursor: pointer;
-        color: #fff;
-    }
-
     .footer-content {
         flex-direction: column;
         align-items: center;
@@ -1437,4 +1591,107 @@ table.bw-table {
     .logo-element {
         margin: 20px 0;
     }
+
+    /* NAVBAR */
+
+    nav{
+        justify-content: right;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .sub-menu {
+        left: -80%;
+        position: static;
+    }
+
+
+    /* PERANGKAT */
+
+    .struktur-box {
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    .struktur-card {
+        width: 100%;
+    }
+
+    /* GEOGRAFIS */
+
+    .map-container {
+        flex-direction: column;
+    }
+
+    .map-iframe{
+        width: 100%;
+        height: auto;
+    }
+
+    /* CHART */
+
+    .charts {
+        flex-direction: column;
+    }
+
+    /* PRODUK */
+    .hero-title {
+        font-size: 4em;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .column-left{
+        width: 100%;
+    }
+
+    .column-right{
+        width: 100%;
+    }
+
+    /* WISATA */
+
+    .wisata-box-container {
+        flex-direction: column;
+    }
+
+    .wisata-box-card {
+        width: 100%;
+    }
+
+    .wisata-paket-box {
+        width: 100%;
+    }
+
+    .wisata-paket-bg {
+        width: 16%;
+    }
+
+    /* BERITA */
+
+    .elements-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .galeri-video {
+        width: 480px;
+        height: 240px;
+    }
+
 }
