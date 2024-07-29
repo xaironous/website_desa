@@ -31,6 +31,7 @@ CREATE TABLE `berita` (
   `id` int(11) NOT NULL,
   `judul` text NOT NULL,
   `tanggal` datetime NOT NULL,
+  `penulis` text NOT NULL,
   `foto_berita` text NOT NULL,
   `isi_berita` longtext NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
@@ -41,7 +42,7 @@ CREATE TABLE `berita` (
 -- Dumping data for table `berita`
 --
 
-INSERT INTO `berita` (`id`, `judul`, `tanggal`, `foto_berita`, `isi_berita`, `created_at`, `updated_at`) VALUES
+INSERT INTO `berita` (`id`, `judul`, `tanggal`, 'penulis', `foto_berita`, `isi_berita`, `created_at`, `updated_at`) VALUES
 (1, 'YNTKTS', '2024-07-23 10:18:52', '01J3ESK79N38EJ8D5YMQM81XPS.png', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '2024-07-23 03:25:20', '2024-07-23 03:25:20');
 
 -- --------------------------------------------------------

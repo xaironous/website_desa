@@ -86,6 +86,7 @@ return new class extends Migration
             $table->integer('id')->primary();
             $table->text('judul');
             $table->dateTime('tanggal');
+            $table->text('penulis');
             $table->text('foto_berita');
             $table->longText('isi_berita');
             $table->timestamp('created_at');
