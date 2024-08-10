@@ -3,7 +3,7 @@
 @section('content')
 <main>
     <section id="home" class="hero">
-        <img src="images/hero-Image.png" alt="Hero Image">
+        <img src="images/hero-image3.png" alt="Hero Image">
         <div class="hero-content">
             <h1>SELAMAT <br>DATANG!<br></h1>
             <p>Di Website Desa Sukolilo</p>
@@ -76,34 +76,41 @@
 
         <section class="profil-desa-section">
             <h2>Mars Desa Sukolilo</h2>
+            <div class="space_40px"></div>
             <iframe
+            class="iframe-player"
             src="https://www.youtube.com/embed/MoAK-J3rSlM?si=2tENu1yJlwPRwW-W"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-            class="iframe-player">
+            allowfullscreen>
             </iframe>
+            <div class="space_40px"></div>
+            <h2>Pengumuman</h2>
         </section>
 
 <section id="berita" class="news-section">
+    
     <div class="swiper-container news-grid">
-        <div class="swiper-wrapper">
+       
+        <div class="elements-box">
             @foreach ($berita as $b)
-            <div class="berita-card swiper-slide">
-                <div class="berita-card-img">
-                    <img src="images/image1.jpg" alt="berita" class="berita-img">
-                </div>
-                <div class="berita-card-text-box">
-                    <text class="berita-title medium-label">{{ $b->judul }}</text>
-                    <text class="berita-date">{{ $b->tanggal }}</text>
-                </div>
-            </div>
+            <a class="berita-card" href="{{ route('informasi.info', ['id' => $b->id]) }}">
+                    <div class="berita-card-img">
+                        <img src="{{asset('storage/' . $b->foto_berita)}}" alt="berita" class="berita-img">
+                    </div>
+                    <div class="berita-card-text-box">
+                        <text class="berita-title medium-label">{{ $b->judul }}</text>
+                        <text class="berita-date">{{ $b->tanggal }}</text>
+                    </div>
+                </a>
             @endforeach
         </div>
+        
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
+        <a href="berita-dan-pengumuman" class="medium-label center-text">Lihat Selengkapnya</a>
     </div>
 </section>
 </main>

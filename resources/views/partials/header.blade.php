@@ -2,6 +2,9 @@
     <div class="logo">
         <a href="/"><img src={{asset("images/logo.png")}} alt="Logo Sukolilo Waiak"></a>
     </div>
+    <div class="close-toggle">
+                X
+    </div>
     <nav>
         <div class="menu-toggle" id="mobile-menu">
             <span class="bar"></span>

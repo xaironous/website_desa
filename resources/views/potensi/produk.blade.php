@@ -5,7 +5,7 @@
     <div class="hero">
         <div class="produk-hero-darken"></div>
         <div class="produk-hero-gradient"></div>
-        <img src="images/produk/hero_1.jpg" alt="Produk Makanan">
+        <img src="images/produk/hero_1.JPG" alt="Produk Makanan">
         <div class="hero-content">
             <text class="hero-title produk-title">PRODUK MAKANAN</text>
         </div>
@@ -13,7 +13,7 @@
     <div class="container">
         <div class="row">
             <div class="column-left">
-                <img src="images/produk/krupuk.jpg">
+                <img src="images/produk/krupuk.JPG">
             </div>
             <div class="column-right">
                 <h1>Krupuk samiler</h1>
@@ -26,7 +26,7 @@
     <div class="container">
         <div class="row">
             <div class="column-left">
-                <img src="images/produk/gula_jawa.jpg">
+                <img src="images/produk/gula_jawa.JPG">
             </div>
             <div class="column-right">
                 <h1>Gula jawa</h1>
@@ -41,7 +41,7 @@
         <div class="produk-hero-gradient-rev"></div>
         <div class="produk-hero-darken"></div>
         <div class="produk-hero-gradient"></div>
-        <img src="images/produk/hero_2.jpg" alt="Produk Makanan">
+        <img src="images/produk/hero_2.JPG" alt="Produk Makanan">
         <div class="hero-content">
             <text class="hero-title produk-title">PRODUK PERKEBUNAN</text>
         </div>
@@ -49,7 +49,7 @@
     <div class="container">
         <div class="row">
             <div class="column-left">
-                <img src="images/produk/rumput.jpg">
+                <img src="images/produk/rumput.JPG">
             </div>
             <div class="column-right">
                 <h1>Rumput taman / hias</h1>

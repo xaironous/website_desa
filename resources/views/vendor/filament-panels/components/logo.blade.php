@@ -1,1 +1,1 @@
-<img src="{{ asset('images/logo_desa.png') }}" alt="Logo" style="max-height: 75px;">
+<img src="{{ asset('images/logo.png') }}" alt="Logo" style="max-height: 65px;">

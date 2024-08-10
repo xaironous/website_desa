@@ -11,11 +11,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const mobileMenu = document.getElementById('mobile-menu');
     const navList = document.querySelector('.nav-list');
+    const logoHeader = document.querySelector('.logo');
+    const closeMenu = document.querySelector('.close-toggle');
 
     mobileMenu.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
         navList.classList.toggle('active');
+        logoHeader.classList.toggle('active');
+        closeMenu.classList.toggle('active');
     });
-
+    
+    closeMenu.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        navList.classList.remove('active');
+        logoHeader.classList.remove('active');
+        closeMenu.classList.remove('active');
+    });
+    
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
           const square = entry.target.querySelector('.page');
@@ -55,37 +67,37 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    var swiper = new Swiper('.swiper-container', {
-        slidesPerView: 4,
-        spaceBetween: 20,
-        loop: true,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-        },
-        breakpoints: {
-            320: {
-                slidesPerView: 1,
-                spaceBetween: 10,
-            },
-            640: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-            },
-            1024: {
-                slidesPerView: 3,
-                spaceBetween: 20,
-            },
-            1280: {
-                slidesPerView: 4,
-                spaceBetween: 20,
-            },
-        }
-    });
+    // var swiper = new Swiper('.swiper-container', {
+    //     slidesPerView: 4,
+    //     spaceBetween: 20,
+    //     loop: true,
+    //     navigation: {
+    //         nextEl: '.swiper-button-next',
+    //         prevEl: '.swiper-button-prev',
+    //     },
+    //     autoplay: {
+    //         delay: 3000,
+    //         disableOnInteraction: false,
+    //     },
+    //     breakpoints: {
+    //         320: {
+    //             slidesPerView: 1,
+    //             spaceBetween: 10,
+    //         },
+    //         640: {
+    //             slidesPerView: 2,
+    //             spaceBetween: 20,
+    //         },
+    //         1024: {
+    //             slidesPerView: 3,
+    //             spaceBetween: 20,
+    //         },
+    //         1280: {
+    //             slidesPerView: 4,
+    //             spaceBetween: 20,
+    //         },
+    //     }
+    // });
 });
 
 window.addEventListener('scroll', function() {

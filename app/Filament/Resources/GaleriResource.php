@@ -29,10 +29,8 @@ class GaleriResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('judul')->required()->label('Judul Foto'),
                 Forms\Components\DateTimePicker::make('tanggal')->required()->label('Tanggal Foto'),
                 Forms\Components\FileUpload::make('foto_galeri')->label('Foto'),
-                Forms\Components\MarkdownEditor::make('penjelasan')->label('Penjelasan Foto'),
             ]);
     }
 
@@ -40,10 +38,8 @@ class GaleriResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('judul')->label('Judul Foto')->searchable(),
                 Tables\Columns\TextColumn::make('tanggal')->label('Tanggal Foto')->sortable(),
                 Tables\Columns\ImageColumn::make('foto_galeri')->label('Foto'),
-                Tables\Columns\TextColumn::make('penjelasan')->label('Penjelasan Foto')->words(15),
             ])
             ->searchPlaceholder('Cari Judul Foto...')
             ->filters([

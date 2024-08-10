@@ -10,6 +10,8 @@
     </div>
 </section>
 <section class="wisata-section">
+    <div class="space_40px"></div>
+    <div class="space_40px"></div>
     <div class="wisata-container">
         <h1 class="large-title wisata-title">GENTONG MAS</h1>
         <img src="images/wisata/gentong_foto.png" alt="" class="wisata-title-img">

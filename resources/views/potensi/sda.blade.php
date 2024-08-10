@@ -8,7 +8,7 @@
         <div class="section-content">
             <h4>PERTANIAN & PERKEBUNAN</h4>
             <div class="content-row">
-                <img src="images/produk/hero_2.jpg" alt="Gambar Pertanian" class="content-image">
+                <img src="images/produk/hero_2.JPG" alt="Gambar Pertanian" class="content-image">
                 <table class="content-table">
                     <tr>
                         <th>Jenis Tanaman</th>
@@ -28,7 +28,7 @@
         <div class="section-content">
             <h4>PETERNAKAN</h4>
             <div class="content-row">
-                <img src="images/produk/peternakan-image.jpg" alt="Gambar Peternakan" class="content-image">
+                <img src="images/produk/peternakan.png" alt="Gambar Peternakan" class="content-image">
                 <table class="content-table">
                     <tr>
                         <th>Jenis Ternak</th>

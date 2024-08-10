@@ -32,6 +32,7 @@ class BeritaResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('judul')->required()->label('Judul Berita'),
                 Forms\Components\DateTimePicker::make('tanggal')->required()->label('Tanggal Berita'),
+                Forms\Components\TextInput::make('penulis')->required()->label('Penulis'),
                 Forms\Components\FileUpload::make('foto_berita')->label('Foto'),
                 Forms\Components\MarkdownEditor::make('isi_berita')->label('Isi Berita'),
             ]);
@@ -43,6 +44,7 @@ class BeritaResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('judul')->label('Judul Berita')->searchable(),
                 Tables\Columns\TextColumn::make('tanggal')->label('Tanggal Berita')->sortable(),
+                Tables\Columns\TextColumn::make('penulis')->label('Penulis')->searchable(),
                 Tables\Columns\ImageColumn::make('foto_berita')->label('Foto'),
                 Tables\Columns\TextColumn::make('isi_berita')->label('Isi Berita')->words(15),
             ])

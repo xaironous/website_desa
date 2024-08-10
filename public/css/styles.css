@@ -20,7 +20,6 @@ main {
     padding-left: 15px;
     padding-top: 50px;
     box-sizing: border-box;
-    min-height: calc(100vh - 400px);
 }
 
 /* FONT SIZE */
@@ -124,7 +123,9 @@ nav {
 
 .sub-menu {
     display: none;
+    visibility: collapse;
     position: absolute;
+    height : 0px;
     top: 100%;
     left: 0;
     background: #fff;
@@ -135,10 +136,13 @@ nav {
 .sub-menu li a {
     padding: 10px;
     white-space: nowrap;
+    text-align: left;
 }
 
 .nav-list li:hover .sub-menu {
+    height: fit-content;
     display: block;
+    visibility: visible;
 }
 
 /* Mobile Menu */
@@ -154,11 +158,17 @@ nav {
     border-radius: 12px;
 }
 
+.close-toggle {
+    display: none;
+    visibility: collapse;
+    opacity: 0;
+}
+
 .bar {
     height: 3px;
     width: 25px;
-    background-color: #333;
-    margin: 4px 0;
+    background-color: black;
+    margin: 4px 0px;
 }
 
 
@@ -452,8 +462,10 @@ header ul.sub-menu{
     width: 200px;
     margin-left: 10px;
     top: 100%;
+    right: 50%;
     opacity: 0;
     visibility: hidden;
+    transition: opacity 200ms ease-in-out;
 }
 
 header ul.sub-menu li {
@@ -522,6 +534,7 @@ header .login-button button:hover {
     top: 50%;
     left: 70%;
     transform: translate(-50%, -50%);
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
 }
 
 .hero-content h1 {
@@ -556,6 +569,7 @@ header .login-button button:hover {
     padding: 50px;
     background-color: #f2f1f1;
     text-align: left;
+    gap: 20px;
 }
 
 .news-header {
@@ -611,12 +625,19 @@ header .login-button button:hover {
 }
 
 .swiper-container {
+    display: flex;
     width: 100%;
+    margin: 0 auto;
     padding: 20px 0;
+    gap: 10px;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .swiper-wrapper {
     display: flex;
+    overflow: hidden;
 }
 
 .news-item {
@@ -810,6 +831,10 @@ body {
     text-align: justify;
     color: #555;
     line-height: 1.6;
+}
+
+#profil-section .container p{
+    text-indent: 0px;
 }
 
 .justify-text {
@@ -1132,7 +1157,7 @@ img.link-box-logo {
     display: flex;
     font-weight: bold;
     align-items: center;
-    width: 500px;
+    width: 100%;
     height: 60px;
     gap: 20px;
     overflow: hidden;
@@ -1260,12 +1285,18 @@ img.info-img {
     display: flex;
     flex-direction: column;
     width: 320px;
-    height: 420px;
-    gap: 20px;
+    height: 380px;
+    gap: 10px;
+    margin: 20px;
     padding: 20px 20px 20px 20px;
     border-radius: 12px;
     border: 1px solid rgba(0, 0, 0, 0.444);
     background: rgba(250, 240, 226, 0.273);
+    transition: box-shadow 200ms ease-in-out;
+}
+
+.berita-card:hover{
+    box-shadow: 1px 1px 10px 5px rgba(0,0,0,0.3);
 }
 
 a.berita-card{
@@ -1311,22 +1342,22 @@ img.berita-img {
 
 .galeri-foto-card {
     display: flex;
-    width: 480px;
-    height: 300px;
+    width: 540px;
+    height: 360px;
     padding: 10px 10px 10px 10px;
     background: white;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.595);
 }
 
 .galeri-foto-card img {
-    object-fit: cover;
+    object-fit: fill;
     width: 100%;
     height: 100%;
 }
 
 .galeri-video {
-    width: 1080px;
-    height: 600px;
+    width: 480px;
+    height: 300px;
 }
 
 /* PAGINATION */
@@ -1339,6 +1370,8 @@ img.berita-img {
 
 .elements-box {
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 20px;
 }
 
@@ -1493,8 +1526,8 @@ table.bw-table {
 /* IFRAME */
 
 .iframe-player {
-    width: 840px;
-    height: 480px;
+    width: 640px;
+    height: 360px;
 }
 
 /* MEDIA CONTENT*/
@@ -1514,6 +1547,10 @@ table.bw-table {
 
     header {
         padding: 10px 20px; /* Mengurangi padding untuk layar kecil */
+    }
+    
+    header nav ul{
+        margin-left: 0px;
     }
 
     .footer-content {
@@ -1582,10 +1619,18 @@ table.bw-table {
     .swiper-container {
         padding: 10px 0;
     }
+    
+    .swiper-wrapper {
+        flex-direction: column;
+    }
 
     .logo-elements {
         flex-direction: column;
         align-items: center;
+    }
+    
+    .logo.active{
+        display: none;
     }
 
     .logo-element {
@@ -1595,7 +1640,7 @@ table.bw-table {
     /* NAVBAR */
 
     nav{
-        justify-content: right;
+        justify-content: center;
     }
 
     .nav-list {
@@ -1604,20 +1649,70 @@ table.bw-table {
         width: 100%;
         text-align: center;
     }
+    
+    .nav-list li {
+        display: flex;
+        flex-direction: column;
+    }
 
     .nav-list.active {
         display: flex;
     }
-
-    .menu-toggle {
+    
+    .menu-toggle{
         display: flex;
+        justify-content: center;
     }
-
-    .sub-menu {
-        left: -80%;
-        position: static;
+    
+    .close-toggle.active{
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        height: fit-content;
+        text-align: center;
+        width: 36px;
+        background: white;
+        color: black;
+        padding: 5px 5px 5px 5px;
+        margin-left: 20px;
+        margin-top: 20px;
+        flex-direction: column;
+        cursor: pointer;
+        border-radius: 12px;
+        visibility: visible;
+        opacity: 1;
     }
+    
+    .menu-toggle.active{
+        display: none;
+        opacity: 0;
+        visibility: collapse;
+    }
+    
 
+    .menu-toggle.active .nav-list{
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+    }
+    
+
+    header ul.sub-menu {
+        position: relative;
+    }
+    
+    header ul.sub-menu{
+    position: relative;
+    background-color: transparent;
+    display: block;
+    list-style-type: none;
+    width: 100%; /*ubah submenu */
+    margin-left: 10px;
+    top: 100%;
+    opacity: 0;
+    visibility: hidden;
+    }
 
     /* PERANGKAT */
 
@@ -1649,7 +1744,7 @@ table.bw-table {
 
     /* PRODUK */
     .hero-title {
-        font-size: 4em;
+        font-size: 3.4em;
     }
 
     .row {
@@ -1683,14 +1778,31 @@ table.bw-table {
     }
 
     /* BERITA */
+    
+    .berita-card {
+    width: 280px;
+    height: 360px;
+}
+    
 
     .elements-box {
         flex-direction: column;
         align-items: center;
     }
+    
+    .galeri-foto-card {
+    width: 360px;
+    height: 240px;
+    
+    }
 
     .galeri-video {
-        width: 480px;
+        width: 360px;
+        height: 240px;
+    }
+    
+    .iframe-player {
+        width: 360px;
         height: 240px;
     }
 

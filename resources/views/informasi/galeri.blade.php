@@ -9,20 +9,20 @@
                 $count = 0;
             @endphp
             @foreach ($foto as $f)
-                @if ($count % 3 == 0)
+                @if ($count % 2 == 0)
                     @if ($count > 0)
                         </div>
                     @endif
                     <div class="elements-box">
                 @endif
             <div class="galeri-foto-card">
-                <img src="{{$f->foto_galeri}}" alt="">
+                <img src="{{asset('storage/' . $f->foto_galeri)}}" alt="">
             </div>
             @php
                 $count++;
             @endphp
             @endforeach
-            @if ($count % 3 != 0)
+            @if ($count % 2 != 0)
                 </div>
             @endif
         </div>

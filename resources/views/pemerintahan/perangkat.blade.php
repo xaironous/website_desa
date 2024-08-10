@@ -17,7 +17,7 @@
                     @endif
                     <div class="struktur-card" tabindex="0">
                     <div class="struktur-card-img-box">
-                        <img src="{{ $p->foto_profil }}" alt="" class="struktur-card-img">
+                        <img src="{{ asset('storage/' . $p->foto_profil) }}" alt="" class="struktur-card-img">
                     </div>
                         <div class="struktur-card-text-box">
                             <text class="medium-label" id="nama-perangkat">{{ $p->nama }}</text>

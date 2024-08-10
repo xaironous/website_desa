@@ -9,7 +9,7 @@ use phpDocumentor\Reflection\Types\Null_;
 class PageController extends Controller
 {
     public function beranda(){
-        $berita = DB::table('berita')->get();
+        $berita = DB::table('berita')->orderBy('tanggal', 'desc')->take(4)->get();
         return view('sections.beranda', ['berita' => $berita]);
     }
 
@@ -85,18 +85,18 @@ class PageController extends Controller
 
     public function berita(){
 
-        $berita = DB::table('berita')->paginate(12);
+        $berita = DB::table('berita')->orderBy('tanggal', 'desc')->paginate(12);
 
         return view('informasi.berita', ['berita' => $berita]);
     }
 
     public function galeri(){
 
-        $foto = DB::table('galeri')->paginate(
-            12, ['*'], 'foto'
+        $foto = DB::table('galeri')->orderBy('tanggal', 'desc')->paginate(
+            8, ['*'], 'foto'
         );
-        $video = DB::table('galeri_video')->paginate(
-            1, ['*'], 'video'
+        $video = DB::table('galeri_video')->orderBy('tanggal', 'desc')->paginate(
+            3, ['*'], 'video'
         );
 
         return view('informasi.galeri', ['foto' => $foto, 'video' => $video]);

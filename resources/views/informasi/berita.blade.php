@@ -17,7 +17,7 @@
                     @endif
                 <a class="berita-card" href="{{ route('informasi.info', ['id' => $b->id]) }}">
                     <div class="berita-card-img">
-                        <img src="images/image1.jpg" alt="berita" class="berita-img">
+                        <img src="{{asset('storage/' . $b->foto_berita)}}" alt="berita" class="berita-img">
                     </div>
                     <div class="berita-card-text-box">
                         <text class="berita-title medium-label">{{ $b->judul }}</text>
